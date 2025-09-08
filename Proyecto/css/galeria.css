@@ -1,0 +1,140 @@
+/* css/galeria.css - Estilos para la galería de imágenes y el lightbox */
+
+/* --- SECCIÓN DE LA GALERÍA --- */
+
+.galeria-section {
+    padding: 2rem;
+    background-color: #fff;
+    margin: 2rem 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.galeria-titulo {
+    text-align: center;
+    font-family: 'Annie Use Your Telescope', cursive;
+    font-size: 3rem;
+    color: #005b96;
+    margin-bottom: 2rem;
+}
+
+.galeria-grid {
+    display: grid;
+    /* Crea 3 columnas en escritorio, y se ajusta a menos en pantallas pequeñas */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.galeria-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen llene el contenedor */
+    display: block;
+}
+
+/* --- ESTILOS DEL LIGHTBOX --- */
+
+.lightbox {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo negro semitransparente */
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox.activo {
+    display: flex; /* Se muestra con Flexbox para centrar */
+}
+
+.lightbox-contenido {
+    max-width: 90%;
+    max-height: 80%;
+    display: block;
+    margin: auto;
+    animation: zoom 0.4s ease-in-out;
+}
+
+@keyframes zoom {
+    from {transform: scale(0.5);}
+    to {transform: scale(1);}
+}
+
+.lightbox-cerrar {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.lightbox-cerrar:hover {
+    color: #bbb;
+}
+
+/* --- Controles de Navegación del Lightbox --- */
+
+.lightbox-prev,
+.lightbox-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -30px; /* Ajuste para centrar verticalmente */
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.3s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none; /* Evita que el texto se seleccione */
+}
+
+.lightbox-prev {
+    left: 0;
+}
+
+.lightbox-next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* --- Media Queries para la galería --- */
+
+@media (max-width: 768px) {
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .galeria-grid {
+        grid-template-columns: 1fr; /* 1 columna en móviles */
+    }
+}

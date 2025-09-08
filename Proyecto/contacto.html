@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluey - Contacto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Zain:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/contacto.css"> <!-- Estilos para la página de contacto -->
+    <link rel="icon" href="img/logo-bluey.png">
+    <!-- Iconos redes sociales (Font Awesome CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <a href="index.html"><img src="img/Cabecera_bluey.webp" alt="Bluey cabecera" class="header-bg-img"></a>
+        </div>
+        <div class="header-bottom">
+            <nav>
+                <div class="hamburger" aria-label="Abrir menú" tabindex="0">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu">
+                    <a href="index.html#trama">Trama</a>
+                    <a href="Personajes.html">Personajes</a>
+                    <a href="Galería.html">Galería</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+        <main>
+        <div class="contact-header">
+            <h1>Nuestra Ubicación</h1>
+            <p class="zain-bold">¡Ven a visitarnos! Aquí puedes ver dónde nos encontramos.</p>
+            <div class="contact-details">
+                <p class="zain-bold"><i class="fas fa-map-marker-alt"></i> Dirección: Brisbane, Queensland, Australia</p>
+                <p class="zain-bold"><i class="fas fa-phone"></i> Teléfono: +52 665 688</p>
+            </div>
+        </div>
+
+        <div class="contact-body">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1286.616124792139!2d152.96832384599685!3d-27.627440643730747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b91579aac93d233%3A0x402a35af3deaf40!2sBrisbane%20Queensland%2C%20Australia!5e0!3m2!1ses-419!2sar!4v1756906857245!5m2!1ses-419!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+    
+            <section class="contact-form-section">
+                <h2>¡Contáctanos!</h2>
+                <!-- Nota: Para que el formulario envíe emails, se necesita programación del lado del servidor (backend) -->
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/menu.js"></script>
+</body>
+</html>

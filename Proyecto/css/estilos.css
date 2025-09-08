@@ -1,0 +1,316 @@
+/* estilos.css - Estilos principales para el sitio Bluey */
+
+/* --- ESTILOS GENERALES Y FUENTES --- */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #e3f6fd;
+    color: #222;
+}
+
+.zain-bold {
+    font-family: "Zain", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.3em;
+}
+
+/* --- CABECERA (HEADER) --- */
+
+.header-top {
+    width: 100vw;
+    /* height: 300px; */ /* Eliminamos la altura fija */
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    background: #b3e5fc;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header-bg-img {
+    width: 100vw;
+    height: auto; /* La altura se ajusta automáticamente */
+    object-fit: contain;
+    display: block;
+    background: #b3e5fc;
+    margin: 0 auto;
+}
+
+.header-bottom {
+    width: 100%;
+    background: #b3e5fc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 57px; /* Reducido de 110px */
+    min-height: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    position: relative;
+    z-index: 2;
+}
+
+/* --- NAVEGACIÓN Y MENÚ --- */
+
+.header-bottom nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Menú horizontal centrado en header-bottom */
+.menu {
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+    position: static;
+    top: auto;
+    right: auto;
+    min-width: 0;
+    box-shadow: none;
+    border-radius: 0;
+    z-index: auto;
+    margin: 0 auto;
+}
+
+.menu a {
+    padding: 0.7rem 2.2rem;
+    color: #222;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.87rem;
+    transition: background 0.2s, font-weight 0.2s;
+    display: inline-block;
+    font-family: 'Annie Use Your Telescope', cursive;
+    letter-spacing: 0.12em;
+}
+
+.menu a:hover {
+    background: #4fc3f7; /* Mismo color turquesa que el footer */
+    font-weight: 700;   /* Texto en negrita al pasar el mouse */
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.hamburger span {
+    height: 4px;
+    background: #222;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* --- CONTENIDO PRINCIPAL (MAIN) --- */
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* Cambiado de 'stretch' a 'center' */
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.col {
+    flex: 1 1 320px;
+    max-width: 500px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 2rem;
+    min-width: 280px;
+}
+
+.col h1 {
+    font-family: 'Annie Use Your Telescope', cursive;
+    letter-spacing: 0.04em;
+    text-align: center;
+}
+
+/* Fuente Zain para el texto del body (excepto títulos) */
+.col p, .col li, .col span {
+    font-family: 'Zain', sans-serif;
+    font-weight: 400;
+}
+
+.col img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* --- PIE DE PÁGINA (FOOTER) --- */
+
+footer {
+    background: #4fc3f7;
+    color: #222;
+    text-align: center;
+    padding: 1.5rem 1rem 1rem 1rem;
+    margin-top: 2rem;
+    border-radius: 12px 12px 0 0;
+}
+
+.legales {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.social-icons a {
+    color: #222;
+    font-size: 1.7rem;
+    transition: color 0.2s;
+}
+
+.social-icons a:hover {
+    color: #1976d2;
+}
+
+/* --- MEDIA QUERIES (DISEÑO RESPONSIVE) --- */
+
+@media (max-width: 900px) {
+    main {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .col {
+        max-width: 100%;
+        flex-grow: 0; /* Evita que las columnas se estiren verticalmente */
+    }
+    .header-bottom nav {
+        justify-content: flex-end;
+    }
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: #4fc3f7;
+        position: absolute;
+        top: 100%;
+        right: 2rem;
+        min-width: 180px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border-radius: 0 0 8px 8px;
+        z-index: 10;
+        margin-left: 0;
+    }
+    .menu.open {
+        display: flex;
+    }
+    .hamburger {
+        display: flex;
+    }
+
+    /* --- Ajustes del Footer para móvil --- */
+    footer {
+        display: flex;
+        flex-direction: column-reverse; /* Invierte el orden de los elementos */
+        align-items: center;
+        gap: 1rem; /* Espacio entre los iconos y el texto legal */
+    }
+
+    .legales {
+        margin-bottom: 0; /* Quitamos el margen que tenía por defecto */
+    }
+
+    .social-icons {
+        /* Aumentamos la separación un 30% (1.2rem * 1.3 = 1.56rem) */
+        gap: 1.6rem;
+    }
+
+    .social-icons a {
+        /* Aumentamos el tamaño un 30% (1.7rem * 1.3 = 2.21rem) */
+        font-size: 2.2rem;
+    }
+}
+
+/* --- ESTILOS SECCIONES TRAMA Y PERSONAJES --- */
+
+.full-width-section {
+    flex-basis: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 2rem;
+    margin-top: 1rem; /* Espacio entre secciones */
+}
+
+.personajes-titulo-principal {
+    font-family: 'Annie Use Your Telescope', cursive;
+    font-size: 3rem;
+    color: #005b96;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.full-width-section h2 {
+    font-family: 'Annie Use Your Telescope', cursive;
+    font-size: 2.8rem;
+    color: #005b96;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.full-width-section p {
+    font-family: 'Zain', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.personajes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.personaje-card {
+    background-color: #f0faff;
+    border: 2px solid #b3e5fc;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.personaje-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.personaje-img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+    /* Filtro para una sombra sutil que combina con el fondo */
+    filter: drop-shadow(5px 5px 8px rgba(0, 91, 150, 0.2));
+}
+
+.personaje-card h3 {
+    font-family: 'Annie Use Your Telescope', cursive;
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
+    color: #007ea7;
+}
+
+.personaje-card p {
+    font-size: 1rem;
+}

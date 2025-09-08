@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluey - Galería</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Zain:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/galeria.css"> <!-- Estilos para la galería -->
+    <link rel="icon" href="img/logo-bluey.png">
+    <!-- Iconos redes sociales (Font Awesome CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <a href="index.html"><img src="img/Cabecera_bluey.webp" alt="Bluey cabecera" class="header-bg-img"></a>
+        </div>
+        <div class="header-bottom">
+            <nav>
+                <div class="hamburger" aria-label="Abrir menú" tabindex="0">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu">
+                    <a href="index.html#trama">Trama</a>
+                    <a href="Personajes.html">Personajes</a>
+                    <a href="Galería.html">Galería</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="galeria" class="galeria-section">
+            <h1 class="galeria-titulo">Galería de Momentos</h1>
+            <div class="galeria-grid">
+                <!-- Reemplaza los nombres de archivo 'fotoX.webp' con los tuyos -->
+                <div class="galeria-item"><img src="img/Miniaturas/Bluey1_Mini.webp" alt="Recuerdos de Bluey" data-full="img/Imágenes Listas/Bluey1.webp"></div>
+                <div class="galeria-item"><img src="img/Miniaturas/Bluey2_Mini.webp" alt="Recuerdos de Bluey" data-full="img/Imágenes Listas/Bluey2.webp"></div>
+                <div class="galeria-item"><img src="img/Miniaturas/Bluey3_Mini.webp" alt="Recuerdos de Bluey" data-full="img/Imágenes Listas/Bluey3.webp"></div>
+                <div class="galeria-item"><img src="img/Miniaturas/Bluey4_Mini.webp" alt="Recuerdos de Bluey" data-full="img/Imágenes Listas/Bluey4.webp"></div>
+                <div class="galeria-item"><img src="img/Miniaturas/Bluey5_Mini.webp" alt="Recuerdos de Bluey" data-full="img/Imágenes Listas/Bluey5.webp"></div>
+                <div class="galeria-item"><img src="img/Miniaturas/Bluey6_Mini.webp" alt="Recuerdos de Bluey" data-full="img/Imágenes Listas/Bluey6.webp"></div>
+                <div class="galeria-item"><img src="img/Miniaturas/Bluey7_Mini.webp" alt="Recuerdos de Bluey" data-full="img/Imágenes Listas/Bluey7.webp"></div>
+                <div class="galeria-item"><img src="img/Miniaturas/Bluey8_Mini.webp" alt="Recuerdos de Bluey" data-full="img/Imágenes Listas/Bluey8.webp"></div>
+                <div class="galeria-item"><img src="img/Miniaturas/Bluey9_Mini.webp" alt="Recuerdos de Bluey" data-full="img/Imágenes Listas/Bluey9.webp"></div>
+                <div class="galeria-item"><img src="img/Miniaturas/Bluey10_Mini.webp" alt="Recuerdos de Bluey" data-full="img/Imágenes Listas/Bluey10.webp"></div>
+                <div class="galeria-item"><img src="img/Miniaturas/Bluey11_Mini.webp" alt="Recuerdos de Bluey" data-full="img/Imágenes Listas/Bluey11.webp"></div>
+                <div class="galeria-item"><img src="img/Miniaturas/Bluey12_Mini.webp" alt="Recuerdos de Bluey" data-full="img/Imágenes Listas/Bluey12.webp"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Estructura para el Lightbox (imagen ampliada) -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-cerrar" title="Cerrar">&times;</span>
+        <a class="lightbox-prev" title="Anterior">&#10094;</a>
+        <a class="lightbox-next" title="Siguiente">&#10095;</a>
+        <img class="lightbox-contenido" id="lightbox-img">
+    </div>
+
+    <footer>
+        <div class="legales">&copy; 2025 Bluey Fan Site. Todos los derechos reservados.</div>
+        <div class="social-icons">
+            <a href="https://x.com" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+    </footer>
+
+    <script src="js/menu.js"></script>
+    <script src="js/galeria.js"></script> <!-- Script para la galería -->
+</body>
+</html>

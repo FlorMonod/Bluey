@@ -1,0 +1,112 @@
+/* css/contacto.css - Estilos para la página de contacto */
+
+/* Wrappers para el contenido de la página de contacto */
+.contact-header, .contact-body {
+    width: 100%;
+}
+
+.contact-header {
+    text-align: center;
+}
+
+.contact-details {
+    margin-top: 1.5rem;
+}
+
+.contact-details p {
+    margin: 0.5rem 0;
+}
+
+.contact-details i {
+    color: #00a8e8; /* Color azul brillante de Bluey */
+    margin-right: 0.5rem;
+}
+
+/* Estilos para el contenedor del mapa */
+.map-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%; /* Proporción 16:9 para un mapa responsivo */
+    margin: 2rem 0;
+    width: 100%; /* Asegura que ocupe el ancho disponible */
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.contact-form-section {
+    margin: 4rem 1rem 2rem 1rem; /* Más margen superior para separarlo del mapa */
+    max-width: 600px; /* Ancho máximo para el formulario */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-form-section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-family: 'Annie Use Your Telescope', cursive;
+    font-size: 2.8rem;
+    color: #005b96; /* Un azul oscuro */
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-family: 'Zain', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #b3cde0; /* Borde azul claro */
+    border-radius: 8px;
+    font-family: 'Zain', sans-serif;
+    font-size: 1.1rem;
+    box-sizing: border-box; /* Para que el padding no afecte el ancho total */
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: #00a8e8; /* Un azul brillante como el de Bluey */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Annie Use Your Telescope', cursive;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #007ea7; /* Azul más oscuro al pasar el mouse */
+}
+
+/* Media query para la página de contacto en escritorio */
+@media (min-width: 901px) {
+    .contact-body {
+        display: flex;
+        gap: 2rem;
+        align-items: flex-start;
+    }
+
+    .map-container,
+    .contact-form-section {
+        flex: 1;
+        margin: 0;
+    }
+}
