@@ -57,4 +57,17 @@ document.addEventListener('DOMContentLoaded', () => {
             cerrarLightbox();
         }
     });
+
+    // Manejo del teclado: Escape para cerrar, flechas para navegar
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.classList.contains('activo')) {
+            if (e.key === 'Escape') {
+                cerrarLightbox();
+            } else if (e.key === 'ArrowLeft') {
+                prevBtn.click(); // Simulamos un clic en el botón "anterior"
+            } else if (e.key === 'ArrowRight') {
+                nextBtn.click(); // Simulamos un clic en el botón "siguiente"
+            }
+        }
+    });
 });
