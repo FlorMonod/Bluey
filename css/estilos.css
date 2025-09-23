@@ -296,7 +296,7 @@ footer {
     border: 2px solid #b3e5fc;
     border-radius: 12px;
     padding: 1.5rem;
-    text-align: left;
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -308,7 +308,6 @@ footer {
 .personaje-img {
     max-width: 150px;
     height: auto;
-    display: block; /* Para poder centrar la imagen con margin */
     margin-bottom: 1rem;
     /* Filtro para una sombra sutil que combina con el fondo */
     filter: drop-shadow(5px 5px 8px rgba(0, 91, 150, 0.2));
@@ -323,4 +322,5 @@ footer {
 
 .personaje-card p {
     font-size: 1rem;
+    text-align: left; /* Alineamos solo el párrafo a la izquierda */
 }
