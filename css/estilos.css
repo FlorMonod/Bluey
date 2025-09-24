@@ -111,6 +111,46 @@ body {
     transition: 0.3s;
 }
 
+/* --- ESTILOS DEL MENÚ DESPLEGABLE (DROPDOWN) --- */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown .dropbtn {
+    /* Hereda estilos de .menu a, no necesita re-declarar todo */
+    border: none;
+    outline: none;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown .dropbtn .fa-caret-down {
+    margin-left: 8px;
+    font-size: 1.5rem;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1faff;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 0 0 8px 8px;
+}
+
+.dropdown-content a {
+    color: #222;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 1.5rem; /* Ajustado para consistencia */
+}
+
 /* --- CONTENIDO PRINCIPAL (MAIN) --- */
 
 main {
@@ -209,8 +249,9 @@ footer {
         flex-direction: column;
         background: #4fc3f7;
         position: absolute;
-        top: 100%;
-        right: 0; /* Ajustado para que ocupe todo el ancho si es necesario */
+        top: 100%; /* Se posiciona justo debajo del header */
+        left: 50%; /* Lo movemos al 50% del ancho del contenedor */
+        transform: translateX(-50%); /* Lo centramos exactamente con una transformación */
         min-width: 180px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         border-radius: 0 0 8px 8px;
@@ -222,6 +263,23 @@ footer {
     }
     .hamburger {
         display: flex;
+    }
+
+    /* --- Ajustes del Dropdown para móvil --- */
+    .dropdown {
+        width: 100%;
+    }
+    .dropdown .dropbtn {
+        width: 100%;
+        text-align: center;
+    }
+    .dropdown-content {
+        position: static; /* No es absoluto en móvil */
+        display: none; /* Sigue oculto por defecto */
+        background-color: #81d4fa; /* Un poco más oscuro para diferenciar */
+        box-shadow: none;
+        border-radius: 0;
+        width: 100%;
     }
 
     /* --- Ajustes del Footer para móvil --- */
