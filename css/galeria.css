@@ -46,31 +46,7 @@
     display: block;
 }
 
-/* --- Ícono de Lupa (Zoom) sobre la imagen --- */
 
-.galeria-item::after {
-    content: '\f00e'; /* Código del ícono de lupa (search-plus) en Font Awesome */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900; /* Necesario para los íconos sólidos de Font Awesome */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 91, 150, 0.6); /* Superposición azul semitransparente */
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-    opacity: 0; /* Oculto por defecto */
-    transition: opacity 0.3s ease;
-    pointer-events: none; /* Permite que los clics lleguen a la imagen de abajo */
-}
-
-.galeria-item:hover::after {
-    opacity: 1; /* Se muestra al pasar el cursor */
-}
 
 /* --- ESTILOS DEL LIGHTBOX --- */
 
@@ -158,4 +134,33 @@
     .galeria-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
     }
+}
+
+/* --- Controles de Zoom del Lightbox --- */
+
+.lightbox-controles {
+    position: absolute;
+    top: 20px;
+    right: 80px; /* Al lado del botón de cerrar */
+    display: flex;
+    gap: 10px;
+}
+
+.lightbox-controles a {
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.lightbox-controles a:hover {
+    color: #bbb;
+}
+
+/* --- Estilo para la imagen con zoom --- */
+
+.lightbox-contenido.zoomed {
+    max-width: none; /* Quita la restricción de ancho */
+    max-height: none; /* Quita la restricción de alto */
+    cursor: zoom-out;
 }

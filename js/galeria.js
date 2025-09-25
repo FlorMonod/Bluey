@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const cerrar = document.querySelector('.lightbox-cerrar');
     const prevBtn = document.querySelector('.lightbox-prev');
     const nextBtn = document.querySelector('.lightbox-next');
+    const zoomInBtn = document.querySelector('.lightbox-zoom-in');
+    const zoomOutBtn = document.querySelector('.lightbox-zoom-out');
 
     let imagenActualIndex;
 
@@ -18,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const img = galeriaImagenes[index];
         // Usamos el atributo 'data-full' para obtener la URL de la imagen grande
         lightboxImg.src = img.dataset.full;
+        lightboxImg.classList.remove('zoomed'); // Resetea el zoom al cambiar de imagen
         imagenActualIndex = index;
     };
 
@@ -31,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para cerrar el lightbox
     const cerrarLightbox = () => {
         lightbox.classList.remove('activo');
+        lightboxImg.classList.remove('zoomed'); // Resetea el zoom al cerrar
         // Opcional: Limpiar el src para detener la carga si se cierra rápido
         lightboxImg.src = "";
     };
@@ -51,10 +55,34 @@ document.addEventListener('DOMContentLoaded', () => {
         mostrarImagen(nuevoIndex);
     });
 
+    // --- LÓGICA DE ZOOM ---
+    zoomInBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        lightboxImg.classList.add('zoomed');
+    });
+
+    zoomOutBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        lightboxImg.classList.remove('zoomed');
+    });
+
     // Cerrar al hacer clic fuera de la imagen
     lightbox.addEventListener('click', (e) => {
+        // Si la imagen está con zoom, el clic en el fondo la achica
+        if (lightboxImg.classList.contains('zoomed')) {
+            lightboxImg.classList.remove('zoomed');
+            return; // Evita que se cierre el lightbox inmediatamente
+        }
         if (e.target === lightbox) {
             cerrarLightbox();
+        }
+    });
+
+    // Clic en la imagen para quitar zoom
+    lightboxImg.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (lightboxImg.classList.contains('zoomed')) {
+            lightboxImg.classList.remove('zoomed');
         }
     });
 
@@ -62,7 +90,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
         if (lightbox.classList.contains('activo')) {
             if (e.key === 'Escape') {
-                cerrarLightbox();
+                // Si la imagen tiene zoom, primero quita el zoom. Si no, cierra.
+                if (lightboxImg.classList.contains('zoomed')) {
+                    lightboxImg.classList.remove('zoomed');
+                } else {
+                    cerrarLightbox();
+                }
             } else if (e.key === 'ArrowLeft') {
                 prevBtn.click(); // Simulamos un clic en el botón "anterior"
             } else if (e.key === 'ArrowRight') {

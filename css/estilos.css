@@ -153,6 +153,11 @@ body {
     font-size: 1.5rem; /* Ajustado para consistencia */
 }
 
+/* Se muestra cuando el JS le añade la clase .show */
+.dropdown-content.show {
+    display: block;
+}
+
 /* --- CONTENIDO PRINCIPAL (MAIN) --- */
 
 main {
