@@ -123,7 +123,9 @@ body {
     border: none;
     outline: none;
     background-color: inherit;
-    font-family: inherit;
+    font-family: 'Annie Use Your Telescope', cursive; /* Asegura la misma tipografía que otros enlaces */
+    font-size: 1.87rem; /* Asegura el mismo tamaño que otros enlaces */
+    letter-spacing: 0.12em; /* Asegura el mismo espaciado que otros enlaces */
     margin: 0;
 }
 
@@ -381,4 +383,91 @@ footer {
 .personaje-card p {
     font-size: 1rem;
     text-align: left; /* Alineamos solo el párrafo a la izquierda */
+}
+
+/* --- ESTILOS PÁGINA TEMPORADAS --- */
+
+.temporada-section {
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 2rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.temporada-section h2 {
+    font-family: 'Annie Use Your Telescope', cursive;
+    font-size: 2.8rem;
+    color: #005b96;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+.episodios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.episodio-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.episodio-card img {
+    width: 100%;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.episodio-card:hover img {
+    transform: scale(1.1);
+}
+
+.episodio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 53, 89, 0.9) 0%, rgba(0, 91, 150, 0) 100%);
+    color: white;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    text-align: left;
+}
+
+.episodio-card:hover .episodio-overlay {
+    opacity: 1;
+}
+
+.episodio-overlay h3 {
+    font-family: 'Annie Use Your Telescope', cursive;
+    font-size: 1.8rem;
+    margin: 0 0 0.5rem 0;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.episodio-card:hover .episodio-overlay h3 {
+    transform: translateY(0);
+}
+
+.episodio-overlay p {
+    font-family: 'Zain', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin: 0;
 }
