@@ -65,6 +65,7 @@
     font-size: 3rem;
     opacity: 0; /* Oculto por defecto */
     transition: opacity 0.3s ease;
+    pointer-events: none; /* Permite que los clics lleguen a la imagen de abajo */
 }
 
 .galeria-item:hover::after {
