@@ -146,14 +146,14 @@
     gap: 10px;
 }
 
-.lightbox-controles a {
+.lightbox-controles button {
     color: #fff;
     font-size: 24px;
     cursor: pointer;
     transition: color 0.3s;
 }
 
-.lightbox-controles a:hover {
+.lightbox-controles button:hover {
     color: #bbb;
 }
 
@@ -163,4 +163,14 @@
     max-width: none; /* Quita la restricción de ancho */
     max-height: none; /* Quita la restricción de alto */
     cursor: zoom-out;
+}
+
+/* --- Reset de estilos para botones en el lightbox --- */
+.lightbox button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit; /* Hereda toda la tipografía */
+    color: inherit;
 }

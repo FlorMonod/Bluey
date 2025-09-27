@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bluey - Galería</title>
+    <meta name="description" content="Explora una galería de imágenes y momentos inolvidables de la serie Bluey. Descubre escenas divertidas y tiernas con Bluey, Bingo, y toda su familia.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Zain:wght@400;700&display=swap" rel="stylesheet">
@@ -66,13 +67,13 @@
 
     <!-- Estructura para el Lightbox (imagen ampliada) -->
     <div class="lightbox" id="lightbox">
-        <span class="lightbox-cerrar" title="Cerrar">&times;</span>
+        <button class="lightbox-cerrar" aria-label="Cerrar">&times;</button>
         <div class="lightbox-controles">
-            <a class="lightbox-zoom-in" title="Agrandar"><i class="fas fa-search-plus"></i></a>
-            <a class="lightbox-zoom-out" title="Achicar"><i class="fas fa-search-minus"></i></a>
+            <button class="lightbox-zoom-in" aria-label="Agrandar"><i class="fas fa-search-plus"></i></button>
+            <button class="lightbox-zoom-out" aria-label="Achicar"><i class="fas fa-search-minus"></i></button>
         </div>
-        <a class="lightbox-prev" title="Anterior">&#10094;</a>
-        <a class="lightbox-next" title="Siguiente">&#10095;</a>
+        <button class="lightbox-prev" aria-label="Anterior">&#10094;</button>
+        <button class="lightbox-next" aria-label="Siguiente">&#10095;</button>
         <img class="lightbox-contenido" id="lightbox-img">
     </div>
 
