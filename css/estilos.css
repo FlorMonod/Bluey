@@ -312,6 +312,23 @@ footer {
         /* Aumentamos el tamaño un 30% (1.7rem * 1.3 = 2.21rem) */
         font-size: 2.2rem;
     }
+
+    .episodio-card {
+        min-height: 300px;
+    }
+
+    .episodio-card img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .episodio-overlay h3 {
+        font-size: 1.8rem;
+    }
+
+    .episodio-overlay p {
+        font-size: 1.1rem;
+    }
 }
 
 /* --- ESTILOS SECCIONES TRAMA Y PERSONAJES --- */
@@ -414,7 +431,8 @@ footer {
 
 .episodios-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: minmax(280px, 70%);
+    justify-content: center;
     gap: 1.5rem;
 }
 
@@ -462,7 +480,7 @@ footer {
 
 .episodio-overlay h3 {
     font-family: 'Annie Use Your Telescope', cursive;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     margin: 0 0 0.5rem 0;
     transform: translateY(20px);
     transition: transform 0.4s ease;
@@ -474,7 +492,7 @@ footer {
 
 .episodio-overlay p {
     font-family: 'Zain', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     line-height: 1.4;
     margin: 0;
 }
