@@ -314,7 +314,7 @@ footer {
     }
 
     .episodio-card {
-        min-height: 300px;
+        min-height: 380px;
     }
 
     .episodio-card img {
@@ -459,7 +459,7 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0, 53, 89, 0.9) 0%, rgba(0, 91, 150, 0) 100%);
+    background: linear-gradient(to top, rgba(0, 53, 89, 0.95) 30%, rgba(0, 91, 150, 0) 100%); /* Degradado más oscuro y extendido */
     color: white;
     overflow: hidden;
     width: 100%;
@@ -482,6 +482,7 @@ footer {
     font-family: 'Annie Use Your Telescope', cursive;
     font-size: 2.2rem;
     margin: 0 0 0.5rem 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la visibilidad */
     transform: translateY(20px);
     transition: transform 0.4s ease;
 }
@@ -495,4 +496,5 @@ footer {
     font-size: 1.3rem;
     line-height: 1.4;
     margin: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la visibilidad */
 }
