@@ -103,13 +103,13 @@
     cursor: pointer;
     position: absolute;
     top: 50%;
-    width: 50px; /* Ancho fijo para el área de clic */
-    padding: 16px 0; /* Padding vertical para altura, sin padding horizontal */
-    margin-top: -30px; /* Ajuste para centrar verticalmente */
+    width: auto;
+    padding: 16px;
+    margin-top: -30px;
     color: white;
     font-weight: bold;
     font-size: 24px;
-    transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
     border-radius: 0 3px 3px 0;
     user-select: none; /* Evita que el texto se seleccione */
 }
@@ -126,7 +126,8 @@
 
 .lightbox-prev:hover,
 .lightbox-next:hover {
-    color: #bbb; /* Cambiamos el color del icono en hover, en lugar del fondo */
+    /* Hacemos el fondo un poco más opaco al pasar el ratón */
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* --- Media Queries para la galería --- */
@@ -150,11 +151,18 @@
     color: #fff;
     font-size: 24px;
     cursor: pointer;
-    transition: color 0.3s;
+    transition: background-color 0.3s;
+    /* Creamos un círculo para el fondo */
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .lightbox-controles button:hover {
-    color: #bbb;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* --- Estilo para la imagen con zoom --- */
@@ -167,7 +175,7 @@
 
 /* --- Reset de estilos para botones en el lightbox --- */
 .lightbox button {
-    background: transparent;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente por defecto */
     border: none;
     padding: 0;
     margin: 0;
