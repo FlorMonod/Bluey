@@ -81,14 +81,14 @@
     to {transform: scale(1);}
 }
 
-.lightbox-cerrar {
+.lightbox .lightbox-cerrar {
     position: absolute;
     top: 20px;
     right: 35px;
     color: #fff;
     font-size: 40px;
     font-weight: bold;
-    transition: 0.3s;
+    transition: color 0.3s;
     cursor: pointer;
 }
 
@@ -98,8 +98,8 @@
 
 /* --- Controles de Navegación del Lightbox --- */
 
-.lightbox-prev,
-.lightbox-next {
+.lightbox .lightbox-prev,
+.lightbox .lightbox-next {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -138,14 +138,14 @@
 
 /* --- Controles de Zoom del Lightbox --- */
 
-.lightbox-controles {
+.lightbox .lightbox-controles {
     position: absolute;
     top: 20px;
     right: 80px; /* Al lado del botón de cerrar */
     display: flex;
     gap: 10px;
 }
-
+.lightbox .lightbox-controles button {
 .lightbox-controles button {
     color: #fff;
     font-size: 24px;
