@@ -9,8 +9,12 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: #e3f6fd;
+    /* Gradiente sutil para un fondo más dinámico */
+    background-color: #e3f6fd; /* Color de respaldo para navegadores antiguos */
+    background-image: linear-gradient(to bottom, #e3f6fd, #cdecf9);
     color: #222;
+    /* Asegura que el gradiente cubra toda la altura de la pantalla */
+    min-height: 100vh;
 }
 
 .zain-bold {
@@ -172,12 +176,14 @@ main {
 }
 
 .col {
-    flex: 1 1 320px;
-    max-width: 500px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    padding: 2rem;
+    /* Cambiamos la base flexible a un porcentaje para forzar 2 columnas.
+       Usamos calc() para restar el espacio del 'gap' y evitar desbordamientos.
+       flex: grow shrink basis */
+    flex: 1 1 calc(50% - 2rem);
+    max-width: 500px; /* Mantenemos el max-width */
+    background: transparent; /* Hacemos el fondo transparente */
+    box-shadow: none; /* Quitamos la sombra del contenedor */
+    padding: 0; /* Quitamos el padding, se manejará internamente */
     min-width: 280px;
 }
 
@@ -335,10 +341,9 @@ footer {
 
 .full-width-section {
     flex-basis: 100%;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    padding: 2rem;
+    background: transparent; /* Hacemos el fondo transparente */
+    box-shadow: none; /* Quitamos la sombra */
+    padding: 0; /* Quitamos el padding para que los elementos internos lo controlen */
     margin-top: 1rem; /* Espacio entre secciones */
 }
 
@@ -413,10 +418,9 @@ footer {
 
 .temporada-section {
     width: 100%;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    padding: 2rem;
+    background: transparent; /* Hacemos el fondo transparente */
+    box-shadow: none; /* Quitamos la sombra */
+    padding: 0; /* Quitamos el padding */
     margin-top: 1rem;
     text-align: center;
 }

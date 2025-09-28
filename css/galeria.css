@@ -3,11 +3,11 @@
 /* --- SECCIÓN DE LA GALERÍA --- */
 
 .galeria-section {
-    padding: 2rem;
-    background-color: #fff;
+    padding: 0; /* Quitamos el padding, el grid interno ya tiene espaciado */
+    background-color: transparent; /* Hacemos el fondo transparente */
     margin: 2rem 0;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    border-radius: 0;
+    box-shadow: none; /* Quitamos la sombra del contenedor */
 }
 
 .galeria-titulo {
