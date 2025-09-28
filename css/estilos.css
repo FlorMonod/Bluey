@@ -10,8 +10,8 @@ body {
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
     /* Gradiente sutil para un fondo más dinámico */
-    background-color: #e3f6fd; /* Color de respaldo para navegadores antiguos */
-    background-image: linear-gradient(to bottom, #e3f6fd, #cdecf9);
+    background-color: #e3f6fd; /* Color de respaldo */
+    background-image: linear-gradient(to bottom, #e3f6fd, #b3e5fc); /* Gradiente más notorio */
     color: #222;
     /* Asegura que el gradiente cubra toda la altura de la pantalla */
     min-height: 100vh;
