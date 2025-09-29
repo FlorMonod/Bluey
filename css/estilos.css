@@ -473,7 +473,8 @@ footer {
 
 .episodios-grid {
     display: grid;
-    grid-template-columns: minmax(280px, 70%);
+    /* Dos columnas en escritorio, cada una ocupando una fracción del espacio */
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     gap: 1.5rem;
 }
@@ -539,4 +540,10 @@ footer {
     line-height: 1.4;
     margin: 0;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la visibilidad */
+}
+
+@media (max-width: 768px) {
+    .episodios-grid {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas más pequeñas */
+    }
 }
