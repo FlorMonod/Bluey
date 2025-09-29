@@ -321,13 +321,15 @@ footer {
         font-size: 2.2rem;
     }
 
-    /* Forzamos 2 columnas para los amigos en móvil */
-    .amigos-container {
-        grid-template-columns: repeat(2, 1fr);
+    .personajes-container:not(.amigos-container) {
+        grid-template-columns: 1fr;
     }
 
     .episodio-card {
         min-height: 380px;
+    }
+    .personaje-card:not(.amigo-card) .personaje-img {
+        transform: translateX(0); /* Aseguramos que no se centre en móvil */
     }
 
     .episodio-card img {
@@ -341,6 +343,19 @@ footer {
 
     .episodio-overlay p {
         font-size: 1.1rem;
+    }
+
+    /* Forzamos 2 columnas para los amigos en móvil */
+    .amigos-container {
+        grid-template-columns: repeat(2, 1fr); /* Sobreescribe la regla de escritorio para evitar desbordamiento */
+    }
+}
+
+/* Reglas específicas para escritorio (más de 900px) */
+@media (min-width: 901px) {
+    /* Contenedor de la familia: 4 columnas en escritorio */
+    .personajes-container:not(.amigos-container) {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -390,12 +405,11 @@ footer {
 
 .personajes-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Base responsiva */
     gap: 1.5rem;
     margin-top: 2rem;
 }
-
-/* Contenedor específico para los amigos para limitar a 3 columnas */
+/* Contenedor de los amigos: 3 columnas fijas en escritorio */
 .amigos-container {
     grid-template-columns: repeat(3, 250px); /* 3 columnas fijas en escritorio */
     justify-content: center; /* Centra las tarjetas si no ocupan todo el ancho */
@@ -440,12 +454,6 @@ footer {
     max-width: 160px; /* Un poco más grande para que destaque */
     /* Filtro para una sombra sutil que combina con el fondo */
     filter: drop-shadow(5px 5px 8px rgba(0, 91, 150, 0.2));
-}
-
-/* Regla específica para mover solo las imágenes de la familia a la izquierda */
-.personaje-card:not(.amigo-card) .personaje-img {
-    left: 0; /* Alineamos al borde izquierdo */
-    transform: translateX(0); /* Anulamos el centrado horizontal */
 }
 
 /* Ajuste específico para subir un poco más la imagen de Bandit */
