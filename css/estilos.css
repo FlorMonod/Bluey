@@ -11,7 +11,7 @@ body {
     font-family: 'Segoe UI', Arial, sans-serif;
     /* Gradiente sutil para un fondo más dinámico */
     background-color: #e3f6fd; /* Color de respaldo para navegadores antiguos */
-    background-image: linear-gradient(to bottom, #e3f6fd, #a1dffb); /* Gradiente más intenso y visible */
+    background-image: linear-gradient(to bottom, #e3f6fd, #8dd9fd); /* Gradiente más intenso y visible */
     color: #222;
     /* Asegura que el gradiente cubra toda la altura de la pantalla */
     min-height: 100vh;
@@ -312,12 +312,10 @@ footer {
     }
 
     .social-icons {
-        /* Aumentamos la separación un 30% (1.2rem * 1.3 = 1.56rem) */
         gap: 1.6rem;
     }
 
     .social-icons a {
-        /* Aumentamos el tamaño un 30% (1.7rem * 1.3 = 2.21rem) */
         font-size: 2.2rem;
     }
 
@@ -352,9 +350,9 @@ footer {
         grid-template-columns: repeat(4, 1fr);
     }
     /* Contenedor de los amigos: 3 columnas en escritorio */
-    .amigos-container {
+    .personajes-container.amigos-container {
         grid-template-columns: repeat(3, 1fr);
-        justify-content: center;
+        justify-items: center; /* Centra las tarjetas dentro de sus celdas */
     }
 }
 
@@ -378,8 +376,8 @@ footer {
 
 .personajes-titulo-secundario {
     font-family: 'Annie Use Your Telescope', cursive;
-    font-size: 2.5rem; /* Un poco más pequeño que el principal */
-    color: #007ea7; /* Un azul un poco más claro */
+    font-size: 2.5rem;
+    color: #007ea7; 
     text-align: center;
     margin: 3rem 0 2rem 0; /* Más margen superior para separar secciones */
 }
@@ -428,7 +426,7 @@ footer {
                 8px 8px 0px #00a8e8; /* Cambiamos el color del borde 3D al hacer hover */
 }
 
-/* Estilo para las tarjetas de amigos con borde más fino */
+
 .personaje-card.amigo-card {
     box-shadow: 0 6px 12px rgba(0, 91, 150, 0.12), 
                 4px 4px 0px #007ea7; /* Borde 3D más fino */
@@ -479,8 +477,8 @@ footer {
 
 /* Ajustes para el título (h3) de la familia */
 .personaje-card:not(.amigo-card) h3 {
-    font-size: 2.52rem; /* Aumentado un 40% */
-    text-align: right; /* Alineado a la derecha */
+    font-size: 2.52rem; 
+    text-align: right; 
 }
 
 .personaje-card p {

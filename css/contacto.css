@@ -33,7 +33,7 @@
 .map-container {
     position: relative;
     overflow: hidden;
-    padding-top: 45%; /* Altura reducida un 20% (antes 56.25%) */
+    padding-top: 67.5%; /* Aumentado un 50% para móvil (antes 45%) */
     margin: 2rem 0;
     width: 100%; /* Asegura que ocupe el ancho disponible */
 }
@@ -122,13 +122,18 @@
 @media (min-width: 901px) {
     .contact-body {
         display: flex;
-        gap: 2rem;
-        align-items: flex-start;
+        gap: 2rem; /* Espacio entre el mapa y el formulario */
+        align-items: stretch; /* Hace que ambos elementos tengan la misma altura */
     }
 
-    .map-container,
+    .map-container {
+        flex: 1; /* Ocupa el espacio disponible */
+        margin: 0; /* Quitamos el margen vertical */
+        padding-top: 0; /* Anulamos el padding para que la altura sea flexible */
+    }
+
     .contact-form-section {
-        flex: 1;
-        margin: 0;
+        flex: 1; /* Ocupa el espacio disponible */
+        margin: 0; /* Quitamos el margen vertical */
     }
 }
