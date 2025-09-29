@@ -10,8 +10,8 @@ body {
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
     /* Gradiente sutil para un fondo más dinámico */
-    background-color: #e3f6fd; /* Color de respaldo */
-    background-image: linear-gradient(to bottom, #e3f6fd, #b3e5fc); /* Gradiente más notorio */
+    background-color: #e3f6fd; /* Color de respaldo para navegadores antiguos */
+    background-image: linear-gradient(to bottom, #e3f6fd, #a1dffb); /* Gradiente más intenso y visible */
     color: #222;
     /* Asegura que el gradiente cubra toda la altura de la pantalla */
     min-height: 100vh;
@@ -381,23 +381,30 @@ footer {
 }
 
 .personaje-card {
-    background-color: #f0faff;
-    border: 2px solid #b3e5fc;
+    position: relative; /* Necesario para posicionar la imagen absolutamente */
+    background-color: #fff; /* Fondo blanco como pediste */
     border-radius: 12px;
-    padding: 1.5rem;
+    padding: 3rem 1.5rem 1.5rem 1.5rem; /* Más padding arriba para el texto */
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 50px; /* Margen superior para dar espacio a la imagen que sobresale */
+    /* Efecto 3D con box-shadow: una sombra suave y una sólida azul */
+    box-shadow: 0 8px 15px rgba(0, 91, 150, 0.15), 
+                8px 8px 0px #007ea7; /* Borde 3D azul */
 }
 
 .personaje-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 25px rgba(0, 91, 150, 0.2), 
+                8px 8px 0px #00a8e8; /* Cambiamos el color del borde 3D al hacer hover */
 }
 
 .personaje-img {
-    max-width: 150px;
-    height: auto;
-    margin-bottom: 1rem;
+    position: absolute; /* Posicionamiento absoluto relativo a la tarjeta */
+    top: -60px; /* La movemos hacia arriba para que sobresalga */
+    left: 50%; /* La centramos horizontalmente */
+    transform: translateX(-50%); /* Ajuste final para el centrado */
+    max-width: 160px; /* Un poco más grande para que destaque */
     /* Filtro para una sombra sutil que combina con el fondo */
     filter: drop-shadow(5px 5px 8px rgba(0, 91, 150, 0.2));
 }
