@@ -402,6 +402,7 @@ footer {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-top: 50px; /* Margen superior para dar espacio a la imagen que sobresale */
+    margin-top: 120px; /* Margen superior para dar espacio a la imagen que sobresale */
     /* Efecto 3D con box-shadow: una sombra suave y una sólida azul */
     box-shadow: 0 8px 15px rgba(0, 91, 150, 0.15), 
                 8px 8px 0px #007ea7; /* Borde 3D azul */
@@ -427,7 +428,7 @@ footer {
 
 .personaje-img {
     position: absolute; /* Posicionamiento absoluto relativo a la tarjeta */
-    top: -80px; /* La subimos un poco más para que no tape el texto */
+    top: -125px; /* Subimos la imagen de forma más agresiva (aprox 30% más que antes) */
     left: 50%; /* La centramos horizontalmente */
     transform: translateX(-50%); /* Ajuste final para el centrado */
     max-width: 160px; /* Un poco más grande para que destaque */
