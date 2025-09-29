@@ -190,6 +190,8 @@ main {
 .col h1 {
     font-family: 'Annie Use Your Telescope', cursive;
     letter-spacing: 0.04em;
+    color: #005b96; /* Color azul que te gustó */
+    font-weight: bold; /* Hacemos el texto más grueso para que resalte */
     text-align: center;
 }
 
@@ -319,6 +321,11 @@ footer {
         font-size: 2.2rem;
     }
 
+    /* Forzamos 2 columnas para los amigos en móvil */
+    .amigos-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .episodio-card {
         min-height: 380px;
     }
@@ -390,7 +397,7 @@ footer {
 
 /* Contenedor específico para los amigos para limitar a 3 columnas */
 .amigos-container {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 250px));
+    grid-template-columns: repeat(3, 250px); /* 3 columnas fijas en escritorio */
     justify-content: center; /* Centra las tarjetas si no ocupan todo el ancho */
 }
 
@@ -398,11 +405,10 @@ footer {
     position: relative; /* Necesario para posicionar la imagen absolutamente */
     background-color: #fff; /* Fondo blanco como pediste */
     border-radius: 12px;
-    padding: 3rem 1.5rem 1.5rem 1.5rem; /* Más padding arriba para el texto */
+    padding: 2rem 1.5rem 1rem 1.5rem; /* Padding vertical reducido para achicar la tarjeta */
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-top: 50px; /* Margen superior para dar espacio a la imagen que sobresale */
-    margin-top: 120px; /* Margen superior para dar espacio a la imagen que sobresale */
+    margin-top: 120px; /* Margen superior unificado para TODAS las tarjetas de personajes */
     /* Efecto 3D con box-shadow: una sombra suave y una sólida azul */
     box-shadow: 0 8px 15px rgba(0, 91, 150, 0.15), 
                 8px 8px 0px #007ea7; /* Borde 3D azul */
@@ -436,11 +442,28 @@ footer {
     filter: drop-shadow(5px 5px 8px rgba(0, 91, 150, 0.2));
 }
 
+/* Regla específica para mover solo las imágenes de la familia a la izquierda */
+.personaje-card:not(.amigo-card) .personaje-img {
+    left: 0; /* Alineamos al borde izquierdo */
+    transform: translateX(0); /* Anulamos el centrado horizontal */
+}
+
+/* Ajuste específico para subir un poco más la imagen de Bandit */
+.personaje-card img[src="img/personajes/bandit.webp"] {
+    top: -140px;
+}
+
 .personaje-card h3 {
     font-family: 'Annie Use Your Telescope', cursive;
     font-size: 1.8rem;
     margin: 0.5rem 0;
     color: #007ea7;
+}
+
+/* Ajustes para el título (h3) de la familia */
+.personaje-card:not(.amigo-card) h3 {
+    font-size: 2.52rem; /* Aumentado un 40% */
+    text-align: right; /* Alineado a la derecha */
 }
 
 .personaje-card p {
