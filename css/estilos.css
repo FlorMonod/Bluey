@@ -355,6 +355,14 @@ footer {
     margin-bottom: 2rem;
 }
 
+.personajes-titulo-secundario {
+    font-family: 'Annie Use Your Telescope', cursive;
+    font-size: 2.5rem; /* Un poco más pequeño que el principal */
+    color: #007ea7; /* Un azul un poco más claro */
+    text-align: center;
+    margin: 3rem 0 2rem 0; /* Más margen superior para separar secciones */
+}
+
 .full-width-section h2 {
     font-family: 'Annie Use Your Telescope', cursive;
     font-size: 2.8rem;
@@ -380,6 +388,12 @@ footer {
     margin-top: 2rem;
 }
 
+/* Contenedor específico para los amigos para limitar a 3 columnas */
+.amigos-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 250px));
+    justify-content: center; /* Centra las tarjetas si no ocupan todo el ancho */
+}
+
 .personaje-card {
     position: relative; /* Necesario para posicionar la imagen absolutamente */
     background-color: #fff; /* Fondo blanco como pediste */
@@ -399,9 +413,21 @@ footer {
                 8px 8px 0px #00a8e8; /* Cambiamos el color del borde 3D al hacer hover */
 }
 
+/* Estilo para las tarjetas de amigos con borde más fino */
+.personaje-card.amigo-card {
+    box-shadow: 0 6px 12px rgba(0, 91, 150, 0.12), 
+                4px 4px 0px #007ea7; /* Borde 3D más fino */
+}
+
+.personaje-card.amigo-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 91, 150, 0.18), 
+                4px 4px 0px #00a8e8; /* Borde 3D más fino y brillante en hover */
+}
+
 .personaje-img {
     position: absolute; /* Posicionamiento absoluto relativo a la tarjeta */
-    top: -60px; /* La movemos hacia arriba para que sobresalga */
+    top: -80px; /* La subimos un poco más para que no tape el texto */
     left: 50%; /* La centramos horizontalmente */
     transform: translateX(-50%); /* Ajuste final para el centrado */
     max-width: 160px; /* Un poco más grande para que destaque */
@@ -419,6 +445,11 @@ footer {
 .personaje-card p {
     font-size: 1rem;
     text-align: left; /* Alineamos solo el párrafo a la izquierda */
+}
+
+/* Aumentamos el tamaño de la fuente solo para la descripción de la familia */
+.personaje-card:not(.amigo-card) p {
+    font-size: 1.3rem; /* 30% más grande que 1rem */
 }
 
 /* --- ESTILOS PÁGINA TEMPORADAS --- */

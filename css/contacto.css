@@ -79,6 +79,20 @@
     background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco semitransparente */
 }
 
+/* Estilo para campos inválidos */
+.form-group input.invalid,
+.form-group textarea.invalid {
+    border-color: #e74c3c; /* Rojo para indicar error */
+}
+
+/* Estilo para el texto de error */
+.error-text {
+    color: #c0392b; /* Rojo oscuro para el texto */
+    font-family: 'Zain', sans-serif;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
 .btn-submit {
     display: block;
     width: 100%;
