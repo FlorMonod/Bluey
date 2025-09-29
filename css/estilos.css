@@ -453,6 +453,15 @@ footer {
     top: -140px;
 }
 
+/* Ajustes de tamaño para Bluey y Bingo para reflejar su edad */
+.personaje-card img[src="img/personajes/bluey.webp"] {
+    width: 170px;
+}
+.personaje-card img[src="img/personajes/bingo.webp"] {
+    width: 140px;
+    top: -95px; /* La bajamos un poco para alinearla visualmente */
+}
+
 .personaje-card h3 {
     font-family: 'Annie Use Your Telescope', cursive;
     font-size: 1.8rem;

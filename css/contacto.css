@@ -9,6 +9,13 @@
     text-align: center;
 }
 
+.contact-header h1 {
+    font-family: 'Annie Use Your Telescope', cursive;
+    font-size: 3rem;
+    color: #005b96;
+    margin-bottom: 1rem;
+}
+
 .contact-details {
     margin-top: 1.5rem;
 }
@@ -26,7 +33,7 @@
 .map-container {
     position: relative;
     overflow: hidden;
-    padding-top: 56.25%; /* Proporción 16:9 para un mapa responsivo */
+    padding-top: 45%; /* Altura reducida un 20% (antes 56.25%) */
     margin: 2rem 0;
     width: 100%; /* Asegura que ocupe el ancho disponible */
 }
