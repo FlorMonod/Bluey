@@ -9,7 +9,7 @@ Trabajo práctico realizado en el marco de la **Tecnicatura Universitaria en Pro
 Desarrollo de un **sitio web estático de baja complejidad**, realizado como primer parcial de la materia, utilizando tecnologías web básicas.
 
 El sitio está orientado a la presentación de una **serie / película / novela**, cumpliendo con los requisitos funcionales solicitados por la cátedra.
-
+Link: https://flormonod.github.io/Bluey/
 ---
 
 ## Tecnologías utilizadas
